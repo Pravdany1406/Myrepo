@@ -1,0 +1,14 @@
+Docker Container build and deploy:
+Prequisties:
+Docker installed on windows or linux
+
+
+Dockerfile,requirements.txt and app.py, put them in the same folder . This completes our app, which as you can see is quite simple. When the above Dockerfile is built into an image, app.py and requirements.txt is present because of that Dockerfile’s COPY command, 
+and the output from app.py is accessible over HTTP 
+
+#Use below command to build the file which creates a Docker image
+docker build --tag=hex_rgb 
+
+#Now run the image using below command
+docker run -p 4000:80 hex_rgb
+
